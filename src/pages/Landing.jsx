@@ -5,9 +5,9 @@ import { useLocation } from "react-router-dom"
 function Landing(){
     const data=useLocation()
     return(
-        <div className="bg-black p-16">
+        <div className="bg-blue-500 p-10">
 
-      <div className="bg-white p-10 border rounded-md">
+      <div className="bg-white p-5 border rounded-md">
         <Header name={data.state.name}></Header>
         {/* card container */}
         <div className="flex justify-between gap-7 flex-wrap my-5">
