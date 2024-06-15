@@ -43,7 +43,7 @@ console.log(users)
 
         <div className="flex flex-col gap-3 my-3">
             <input type="text" vlaue={eusername} onChange={handleuname}className="w-52 bg-transparent border-black p-1 border rounded-md" placeholder="username"></input>
-            <input type="text" value={epassword} onChange={handlepassword}className="w-52 bg-transparent   border-black p-1 border rounded-md" placeholder="password"></input>
+            <input type="password" value={epassword} onChange={handlepassword}className="w-52 bg-transparent   border-black p-1 border rounded-md" placeholder="password"></input>
            
             <button className="bg-[#8272DA] w-24 border rounded-md p-1"onClick={checkuser}>Login</button>
            <p>Don't have an account <Link to={"/signup"} className="underline">Signup</Link></p>

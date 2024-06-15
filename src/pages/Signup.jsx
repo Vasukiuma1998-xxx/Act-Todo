@@ -7,6 +7,7 @@ function Signup(props){
     const navigate=useNavigate()
     const [eusername,esetusername]=useState()
     const [epassword,esetpassword]=useState()
+    const [signupSuccess, setSignupSuccess] = useState(false);
 
     function handleuname(evt){
         esetusername(evt.target.value)
@@ -15,9 +16,12 @@ function handlepassword(evt){
     esetpassword(evt.target.value)
 }
    
-function Adduser(){
-    setuser([...users,{uname:eusername,pwd:epassword}])
-    navigate("/")
+function Adduser() {
+    setuser([...users, { uname: eusername, pwd: epassword }]);
+    setSignupSuccess(true);
+    setTimeout(() => {
+        navigate("/");
+    }, 2000); // Navigate to login page after 2 seconds
 }
     return(
         <div  className="bg-black p-10" >
@@ -34,7 +38,9 @@ function Adduser(){
             <button className="bg-[rgb(252,241,84)] w-24 border rounded-md p-1" onClick={Adduser}>Signup</button>
            <p>Already have an account <Link to={"/"} className="underline">Login</Link></p>
         </div>
-
+        {signupSuccess && (
+                    <p className="text-green-500 mt-3">Signed up successfully! Redirecting to login...</p>
+                )}
         </div>
         
         </div>
